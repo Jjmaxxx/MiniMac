@@ -15,13 +15,15 @@ public class MiniMac extends Publisher implements Serializable{
     String content;
     public MiniMac(){
         memory = new Integer[size];
-        clear();
+        Arrays.fill(memory, 0);
     }
     public void clear(){
+        if( instructionList == null) return;
         Arrays.fill(memory, 0);
         notifySubscribers();
     }
-    public void execute() throws Exception {
+    public void execute(){
+        if(instructionList == null) return;
         halt=false;
         ip=0;
         while(ip<instructionList.size() && !halt){

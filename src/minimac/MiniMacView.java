@@ -46,4 +46,10 @@ public class MiniMacView extends JPanel implements Subscriber{
         scanner.close();
 
     }
+    public void setMiniMac(MiniMac mac2){
+        minimac.unsubscribe(this);
+        minimac= mac2;
+        minimac.subscribe(this);
+        update();
+    }
 }

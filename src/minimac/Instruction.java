@@ -1,6 +1,7 @@
 package minimac;
+import java.io.Serializable;
 
-public interface Instruction {
+public interface Instruction extends Serializable {
 
     public void execute(MiniMac program);
 }
